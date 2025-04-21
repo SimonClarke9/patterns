@@ -11,9 +11,9 @@ Use AWS Cloud to build a Data Platform. In this Data Platform we want to manage 
 # Architecture #
 <detials>
 <summary>Explain  with  top level diagram the Tools to be used.</summary>
-```python
+'''python
 import image as architecture
-```
+'''
 </details>
 
 
