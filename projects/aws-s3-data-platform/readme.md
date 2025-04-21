@@ -101,7 +101,7 @@ Optimize costs using AWS Cost Explorer and S3 Intelligent-Tiering.
 # Pricing #
 Tool | Value | Last Update |
 | :--- | ---: | ---: |
-Lambda | 0.0000166667 USD | Apr 2025 |
+| Lambda : <br> compute: request seconds/month * Compute Cost<br>  Request: Ram MB * Num Requests * Request Cost <br> Ephemeral: Ephemeral size GB - 0.5GB * Ephemeral cost  | Compute: 0.0000166667 USD <br> Request: 0.0000002 USD <br> Ephemeral: 0.0 USD | Apr 2025 |
 
 # Further Reading #
 | References | Link URL | Age |
