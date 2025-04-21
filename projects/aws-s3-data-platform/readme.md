@@ -99,9 +99,9 @@ Monitor pipelines and storage with Amazon CloudWatch.
 Optimize costs using AWS Cost Explorer and S3 Intelligent-Tiering.
 
 # Pricing #
-Tool | Value
-| :--- | ---: |
-Lambda | 0.0000166667 USD |
+Tool | Value | Last Update |
+| :--- | ---: | ---: |
+Lambda | 0.0000166667 USD | Apr 2025 |
 
 # Further Reading #
 | References | Link URL | Age |
