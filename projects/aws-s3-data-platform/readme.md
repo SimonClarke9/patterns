@@ -1,15 +1,20 @@
 # Data Platform Using AWS #
 
 ## Summary ##
-Use AWS Cloud to build a Data Platform. In this Data Platform we want to manage streaming data like Clicks (structured data), batched Sales (structured data), and Unstructured data like product images.
+Use AWS Cloud to build a Data Platform. In this Data Platform we want to manage structured data, semi-structured data, and Unstructured data.
+I have split this project into:
+- Summary
+- Architecture 
+- Data Governance
+- Data Pipelines
 
-## Assumptions ##
+### Assumptions ###
 | Question | Assumtion |
 | :--- | :---|
 | What data is to be ingested | Let's assume Structured data will be CSV or JSON (excluding XML for this project to keep document types as simple list). <br> Unstructured Data will be images, binary files, text files |
 | How often does data need to be ingested |  For Steaming Data, assume 15 minutes latency. <br> For Batch collection, assume 1hr intervals |
 
-# Architecture #
+## Architecture ##
 <detials>
 <summary>Explain  with  top level diagram the Tools to be used.</summary>
 '''python
@@ -22,12 +27,14 @@ import image as architecture
 - Processed Layer
 - Curated Layer
 
+## Data Governance ##
 ### Versioning ###
 Implement version control for dataset (schemas) in both raw and processed layersto track change.
-## Governance ##
 ### Access Control ###
-- AWS IAM roles and policy to enfore least-priviledge access.
-- Implement fine-grained access controles using AWS Lake Formention or AWS Glue Data Catalog
+- AWS IAM roles and policy to enfore least-priviledge access. Implement access controls using AWS IAM and encrypt data at rest and in transit.
+- Implement fine-grained access controles using AWS Lake Formention or AWS Glue Data Catalog.
+- Use AWS Lake Formation for managing data permissions and governance.
+
 ### Metadata and Cataloging ###
 - Use AWS Glue=for automatic schema discovery and metadata management.
 - Maintain a centralised catalog to make datasets searchable and document their lineage.
@@ -36,9 +43,15 @@ Implement version control for dataset (schemas) in both raw and processed layers
 - File Formats; store raw data in gziped compressed text files especially for JSON and CSV file types : Enable S3 bucket compression
 - Use columnar formats like Parquet or ORC  for curated data.
 - Use Partioning structures based on time, source, or data type for improved accessability
-- Lifecycyle policies
-## Scaleable Ingestion and Transformation ##
+- Lifecycyle policies: Use S3 lifecycle policies to manage storage costs by archiving older data to Amazon Glacier.
+### Monitoring and Optimization ###
+Monitor pipelines and storage with Amazon CloudWatch.
+Optimize costs using AWS Cost Explorer and S3 Intelligent-Tiering.
+
+
+## Data Pipeleines ##
 ### Data Ingestion ###
+Use AWS services like Kinesis Data Streams or AWS Glue to ingest data from sources like website clickstreams, purchase history, product catalogs, and user demographics.
 - Use Event driven pipelines for streaming data: AwS Lambda AWS Kinesis
 - AWS Data Pipeline or Apache Airflow for scheduling batch ingestion/
 ### ETL Processing ###
@@ -47,6 +60,13 @@ Implement version control for dataset (schemas) in both raw and processed layers
     - Data Cleaning
     - Imputation
     - Feature transformation
+# Data Analytics #
+Use Amazon Redshift or Athena for querying and analyzing data stored in S3.
+Integrate with Amazon QuickSight for visualization and reporting.
+# Machine Learning Integration #
+Prepare data for machine learning models using Amazon SageMaker.
+Train and deploy recommendation models that leverage user behavior and product data.
+
 ### Job Orchestration ###
 - Use AWS Step, or Airflow to orchestrate workflows and ensure fault tolerance.
 
@@ -54,49 +74,9 @@ Implement version control for dataset (schemas) in both raw and processed layers
 
 
 
-# Data Ingestion #
-Use AWS services like Kinesis Data Streams or AWS Glue to ingest data from sources like website clickstreams, purchase history, product catalogs, and user demographics.
-
-## Collecting Data ##
-
-## ETL Processes ##
-### Cleaning ###
-Ensure data is cleaned
-### Transformation ###
-transformed during ingestion to maintain consistency.
-
- 
 
 
-# Data Storage #
-Store raw and processed data in Amazon S3 buckets, organized by data type and usage (e.g., raw data, processed data, analytics-ready data).
 
-Use S3 lifecycle policies to manage storage costs by archiving older data to Amazon Glacier.
-
-# Scalable Pipelines #
-Implement ETL pipelines using AWS Glue or Apache Spark on Amazon EMR for processing large datasets.
-
-Automate pipeline workflows with AWS Step Functions.
-
-# Data Analytics #
-Use Amazon Redshift or Athena for querying and analyzing data stored in S3.
-
-Integrate with Amazon QuickSight for visualization and reporting.
-
-# Machine Learning Integration #
-Prepare data for machine learning models using Amazon SageMaker.
-
-Train and deploy recommendation models that leverage user behavior and product data.
-
-# Security and Governance #
-Implement access controls using AWS IAM and encrypt data at rest and in transit.
-
-Use AWS Lake Formation for managing data permissions and governance.
-
-# Monitoring and Optimization #
-Monitor pipelines and storage with Amazon CloudWatch.
-
-Optimize costs using AWS Cost Explorer and S3 Intelligent-Tiering.
 
 # Pricing #
 Tool | Value | Last Update |
