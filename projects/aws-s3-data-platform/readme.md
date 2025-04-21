@@ -1,6 +1,6 @@
-Data Platform USING AWS
+Data Platform Using AWS
 
-#Data Ingestion#
+# Data Ingestion #
 Use AWS services like Kinesis Data Streams or AWS Glue to ingest data from sources like website clickstreams, purchase history, product catalogs, and user demographics.
 
 ##Collecting Data##
