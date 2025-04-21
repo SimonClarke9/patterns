@@ -1,12 +1,20 @@
 # Data Platform Using AWS #
 
 ## Summary ##
-Use AWS Cloud to build a Data Platform. In this Data Platform we want to manage streaming data like Clicks, other structured data. 
+Use AWS Cloud to build a Data Platform. In this Data Platform we want to manage streaming data like Clicks, other structured data, and Unstructured data
 ## Assumptions ##
 | Question | Assumtion |
 | :--- | :---|
-| What data is to be ingested | Lets assume incoming data will be csv or JSON |
+| What data is to be ingested | Let's assume Structured data will be csv or JSON. <br> Unstructured Data will be images, binary files, text files |
 | How often does data need to be ingested |  For Steaming Data, assume 15 minutes latency. <br> For Batch collection, assume 1hr intervals |
+
+# Architecture #
+<details>Explain  wit  top level diagram the Tools to be used.
+'''python
+    Architecture image here
+'''
+</details>
+
 
 # Data Ingestion #
 Use AWS services like Kinesis Data Streams or AWS Glue to ingest data from sources like website clickstreams, purchase history, product catalogs, and user demographics.
