@@ -9,11 +9,11 @@ Use AWS Cloud to build a Data Platform. In this Data Platform we want to manage 
 | How often does data need to be ingested |  For Steaming Data, assume 15 minutes latency. <br> For Batch collection, assume 1hr intervals |
 
 # Architecture #
-<details>Explain  wit  top level diagram the Tools to be used.
+<architecture>Explain  wit  top level diagram the Tools to be used.
 '''python
     Architecture image here
 '''
-</details>
+</architecture>
 
 
 # Data Ingestion #
