@@ -1,9 +1,12 @@
-Data Platform Using AWS
+# Data Platform Using AWS #
 
-
-# Summary #
-Use AWS Cloud to build a Data Platform. In this Data Platform we want to manage streaming data like Clicks
+## Summary ##
+Use AWS Cloud to build a Data Platform. In this Data Platform we want to manage streaming data like Clicks, other structured data. 
 ## Assumptions ##
+| Question | Assumtion |
+| :--- | :---|
+| What data is to be ingested | Lets assume incoming data will be csv or JSON |
+| How often does data need to be ingested |  For Steaming Data, assume 15 minutes latency. <br> For Batch collection, assume 1hr intervals |
 
 # Data Ingestion #
 Use AWS services like Kinesis Data Streams or AWS Glue to ingest data from sources like website clickstreams, purchase history, product catalogs, and user demographics.
