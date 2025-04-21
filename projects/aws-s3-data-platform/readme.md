@@ -5,7 +5,7 @@ Use AWS Cloud to build a Data Platform. In this Data Platform we want to manage 
 ## Assumptions ##
 | Question | Assumtion |
 | :--- | :---|
-| What data is to be ingested | Let's assume Structured data will be csv or JSON. <br> Unstructured Data will be images, binary files, text files |
+| What data is to be ingested | Let's assume Structured data will be CSV or JSON (excluding XML for this project). <br> Unstructured Data will be images, binary files, text files |
 | How often does data need to be ingested |  For Steaming Data, assume 15 minutes latency. <br> For Batch collection, assume 1hr intervals |
 
 # Architecture #
