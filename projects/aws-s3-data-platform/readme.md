@@ -11,10 +11,12 @@ I have split this project into:
 ### Assumptions ###
 <details>
 <summary>Assumption applying to this projects.</summary>
+
 | Question | Assumtion |
 | :--- | :---|
 | What data is to be ingested | Let's assume Structured data will be CSV or JSON (excluding XML for this project to keep document types as simple list). <br> Unstructured Data will be images, binary files, text files |
 | How often does data need to be ingested |  For Steaming Data, assume 15 minutes latency. <br> For Batch collection, assume 1hr intervals |
+
 </details>
 ## Architecture ##
 <detials>
