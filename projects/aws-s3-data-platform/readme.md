@@ -10,7 +10,7 @@ I have split this project into:
 
 ### Assumptions ###
 <details>
-<summary>Assumption applying to this projects.</summary>
+<summary>Assumptions applying to this projects.</summary>
 
 | Question | Assumtion |
 | :--- | :---|
@@ -18,13 +18,17 @@ I have split this project into:
 | How often does data need to be ingested |  For Steaming Data, assume 15 minutes latency. <br> For Batch collection, assume 1hr intervals |
 
 </details>
+
 ## Architecture ##
 <detials>
 <summary>Explain  with  top level diagram the Tools to be used.</summary>
+
 '''python
 import image as architecture
 '''
+
 </details>
+
 ### Data Structure ###
 #### Layered Architecture
 - Raw Layer
