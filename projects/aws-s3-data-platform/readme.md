@@ -102,11 +102,14 @@ Optimize costs using AWS Cost Explorer and S3 Intelligent-Tiering.
 Tool | Value | Last Update |
 | :--- | ---: | ---: |
 | Lambda : <br> compute: RAM GB * Request seconds/month * Compute Cost<br>  Request: Num Requests * Request Cost <br> Ephemeral: Ephemeral size GB - 0.5GB * Ephemeral cost  | Compute: 0.0000166667 USD <br> Request: 0.0000002 USD <br> Ephemeral: 0.0 USD | Apr 2025 |
+| AWS Glue billy hourly for streaming ETL while thy are running. | |
+
 
 # Further Reading #
 | References | Link URL | Age |
 | :--- | :--- | ---: |
 | Building Secure Data Lakes with AWS | https://community.aws/content/2mwYy9bQazyXKRJwnGtjl8feXt4/building-secure-data-lakes-with-aws-from-s3-to-ml | 15 December 2024 |
 | Build and Train ML models using data mesh architecture on AWS | https://aws.amazon.com/blogs/machine-learning/part-1-build-and-train-ml-models-using-a-data-mesh-architecture-on-aws/ | 29 July 2022 |
-| Building the ML Platform | https://docs.aws.amazon.com/whitepapers/latest/build-secure-enterprise-ml-platform/building-the-ml-platform.html | 2025 |
-
+| Building the ML Platform | https://docs.aws.amazon.com/whitepapers/latest/build-secure-enterprise-ml-platform/building-the-ml-platform.html | AWS 2025 |
+| Kinesis Connections | https://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-etl-connect-kinesis-home.html | AWS 2025 |
+| Read data from Kinesis Data Streams using AWS Glue | https://docs.aws.amazon.com/streams/latest/dev/using-other-services-glue.html | 
