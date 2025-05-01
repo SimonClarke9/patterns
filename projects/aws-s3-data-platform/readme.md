@@ -30,6 +30,9 @@ import image as architecture
 </details>
 
 ### Data Structure ###
+
+<details>
+<summary>
 #### Layered Architecture
 - Raw Layer
 - Processed Layer
