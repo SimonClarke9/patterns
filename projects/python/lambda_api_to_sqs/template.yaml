@@ -1,0 +1,48 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: AWS::Serverless-2016-10-31
+Description: Lambda function that fetches data from an API and sends it to SQS
+
+Resources:
+  ApiToSqsQueue:
+    Type: AWS::SQS::Queue
+    Properties:
+      QueueName: api-results-queue
+      VisibilityTimeout: 60
+      MessageRetentionPeriod: 86400  # 1 day in seconds
+
+  ApiToSqsLambda:
+    Type: AWS::Serverless::Function
+    Properties:
+      CodeUri: ./
+      Handler: api_to_sqs_lambda.lambda_handler
+      Runtime: python3.9
+      Timeout: 30
+      MemorySize: 256
+      Environment:
+        Variables:
+          API_URL: https://your-api-endpoint.com
+          SQS_QUEUE_URL: !Ref ApiToSqsQueue
+      Policies:
+        - SQSSendMessagePolicy:
+            QueueName: !GetAtt ApiToSqsQueue.QueueName
+      Events:
+        Schedule:
+          Type: Schedule
+          Properties:
+            Schedule: rate(1 hour)
+            Name: HourlyApiCheck
+            Description: Fetches API data every hour
+            Enabled: true
+
+Outputs:
+  LambdaFunction:
+    Description: "Lambda Function ARN"
+    Value: !GetAtt ApiToSqsLambda.Arn
+  
+  SQSQueue:
+    Description: "SQS Queue URL"
+    Value: !Ref ApiToSqsQueue
+  
+  SQSQueueARN:
+    Description: "SQS Queue ARN"
+    Value: !GetAtt ApiToSqsQueue.Arn
